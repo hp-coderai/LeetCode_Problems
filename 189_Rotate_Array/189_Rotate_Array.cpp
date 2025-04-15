@@ -1,21 +1,16 @@
-Given an array nums of size n, return the majority element.
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+        int n = nums.size();
+    k = k % n; // Ensure k is within the bounds of the array length
 
-The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
-
- 
-
-Example 1:
-
-Input: nums = [3,2,3]
-Output: 3
-Example 2:
-
-Input: nums = [2,2,1,1,1,2,2]
-Output: 2
- 
-
-Constraints:
-
-n == nums.length
-1 <= n <= 5 * 104
--109 <= nums[i] <= 109
+    // Reverse the entire array
+    reverse(nums.begin(), nums.end());
+    
+    // Reverse the first k elements
+    reverse(nums.begin(), nums.begin() + k);
+    
+    // Reverse the rest of the elements after k
+    reverse(nums.begin() + k, nums.end());     
+    }
+};
