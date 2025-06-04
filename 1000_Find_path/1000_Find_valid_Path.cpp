@@ -23,13 +23,40 @@ bool findIntersectTop(object* obj, float height){
   return (height< (Radius + obj.y));
 }
 
-bool findIntersectTop(object* obj, float height){
+bool findIntersectBottom(object* obj, float height){
   float Radius = findRadius(&obj);
   return ((Radius - obj.y) <= (float)0.0);
 }
 
-bool FindSequenceRecursively(object* objA, object* objB, vector<int> visited) {
-  
+bool findIfVisited(vector<int>* visited, int idx) {
+  for(int i = 0; i<visisted.size(); i++) {
+    if (idx == visited[i]) {
+      return true;
+    }
+  }
+  return false;
+}
+
+bool FindSequenceRecursively(int i, object* objA, object* objB, vector<int> visited) {
+  if(findIntersectTop(&objB[i], &height){
+    return true;
+  }  
+  if (findIfVisited(i, &visited) == false) {
+    visited.push_back(i);
+    return FindSequenceRecursively(i, &objA[i], &objB[i], &visited); 
+  }
+  i++;
+  return false;
 }
   
+bool FindValidPath( object* objA, object* objB) {
+  bool isValidPath;
+  for (int j = 0; j< objA.size(); j++) {
+    if(findIntersectBottom(&objB[i], &height){
+      vector<int> visited = {};
+      visited.push_back(j);
+      isValidPath = FindSequenceRecursively(j, &objA, &objB, &visited)
+    } 
+  }
+  return isValidPath;
 }
