@@ -10,7 +10,7 @@ bool findIntersect(Vectors* VecA, Vectors* VecB) {
     map[i] = {VecA[i].x, VecA[i].y};
   }
   for(int i = 0; i<VecB.size(); i++){
-    if (VecB[i] in map) {
+    if (map[i] == {VecB[i].x, VecB[i].y}) {
       Intersect = true;
       int idxB = i; 
     }
